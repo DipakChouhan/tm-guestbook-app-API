@@ -1,6 +1,8 @@
 -- Create the schema to hold the tables related to this application
 CREATE SCHEMA `guestbook-app`;
 
+use `guestbook-app`;
+
 -- To create the main table that will hold all the entries
 CREATE TABLE `GUEST_BOOK_ENTRY`(
   `GUEST_BOOK_ENTRY_ID` INT NOT NULL AUTO_INCREMENT,
