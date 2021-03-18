@@ -1,4 +1,4 @@
-package com.tm.guestbook.common.utility;
+package com.tm.guestbook.api.common.utility;
 
 public class GuestBookSecurityContextHolder {
     private static final ThreadLocal<ExecutionContext> contextHolder = new ThreadLocal<>();

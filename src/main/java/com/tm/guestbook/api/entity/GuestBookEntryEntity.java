@@ -1,6 +1,6 @@
 package com.tm.guestbook.api.entity;
 
-import com.tm.guestbook.common.entity.BaseEntity;
+import com.tm.guestbook.api.common.entity.BaseEntity;
 import com.tm.guestbook.security.entity.UserEntity;
 
 import javax.persistence.Column;

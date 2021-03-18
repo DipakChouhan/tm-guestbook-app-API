@@ -1,4 +1,4 @@
-package com.tm.guestbook.common.utility.date;
+package com.tm.guestbook.api.common.utility.date;
 
 import java.time.LocalDate;
 import java.time.LocalDateTime;

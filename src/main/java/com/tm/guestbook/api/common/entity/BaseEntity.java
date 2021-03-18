@@ -1,6 +1,6 @@
-package com.tm.guestbook.common.entity;
+package com.tm.guestbook.api.common.entity;
 
-import com.tm.guestbook.common.utility.GuestBookSecurityContextHolder;
+import com.tm.guestbook.api.common.utility.GuestBookSecurityContextHolder;
 
 import javax.persistence.Column;
 import javax.persistence.MappedSuperclass;

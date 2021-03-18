@@ -3,9 +3,9 @@ package com.tm.guestbook.api.service;
 import com.tm.guestbook.api.entity.GuestBookEntryEntity;
 import com.tm.guestbook.api.model.GuestBookEntryModel;
 import com.tm.guestbook.api.repository.GuestBookEntryRepository;
-import com.tm.guestbook.common.utility.GuestBookSecurityContextHolder;
-import com.tm.guestbook.common.utility.converter.EntityToModelUtil;
-import com.tm.guestbook.common.utility.converter.ModelToEntityUtil;
+import com.tm.guestbook.api.common.utility.GuestBookSecurityContextHolder;
+import com.tm.guestbook.api.common.utility.converter.EntityToModelUtil;
+import com.tm.guestbook.api.common.utility.converter.ModelToEntityUtil;
 import com.tm.guestbook.security.entity.UserEntity;
 import com.tm.guestbook.security.repository.UserDetailsRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -18,6 +18,11 @@ import java.util.Arrays;
 import java.util.List;
 import java.util.Optional;
 
+/**
+ * Service layer class to perform business logic and validations
+ * Created By: Dipak Chouhan
+ */
+
 @Service
 @Transactional(rollbackFor = {Exception.class})
 public class GuestBookEntryServiceImpl implements GuestBookEntryService{
@@ -28,6 +33,10 @@ public class GuestBookEntryServiceImpl implements GuestBookEntryService{
     @Autowired
     private UserDetailsRepository userDetailsRepository;
 
+    /**
+     * Service method to create the text guest book entry
+     * @param guestBookEntryModel
+     */
     @Override
     public void createGuestBookEntry(GuestBookEntryModel guestBookEntryModel) {
         GuestBookEntryEntity guestBookEntryEntity = ModelToEntityUtil.convertGuestBookEntryModelToGuestBookEntryEntity(guestBookEntryModel);
@@ -49,6 +58,10 @@ public class GuestBookEntryServiceImpl implements GuestBookEntryService{
         guestBookEntryRepository.save(guestBookEntryEntity);
     }
 
+    /**
+     * Service method fetch all the guestbook entries and returns it
+     * @return List<GuestBookEntryModel>
+     */
     @Override
     public List<GuestBookEntryModel> getAllGuestBookEntries() {
         List<GuestBookEntryEntity> guestBookEntryEntities = guestBookEntryRepository.findAll(Sort.by(Sort.Order.desc("createdOn")));
@@ -58,6 +71,10 @@ public class GuestBookEntryServiceImpl implements GuestBookEntryService{
         return guestBookEntryModels;
     }
 
+    /**
+     * Service method to delete guest book entries using IDs
+     * @param guestBookEntryIds
+     */
     @Override
     public void deleteGuestBookEntries(String guestBookEntryIds) {
         List<String> guestBookEntryIdList = Arrays.asList(guestBookEntryIds.split(","));
@@ -68,6 +85,10 @@ public class GuestBookEntryServiceImpl implements GuestBookEntryService{
         });
     }
 
+    /**
+     * Service method to approve the guest book entries using IDs
+     * @param guestBookEntryIds
+     */
     @Override
     public void approveGuestBookEntries(String guestBookEntryIds) {
         List<String> guestBookEntryIdList = Arrays.asList(guestBookEntryIds.split(","));
@@ -82,6 +103,11 @@ public class GuestBookEntryServiceImpl implements GuestBookEntryService{
         });
     }
 
+    /**
+     * Service method to get all the giest book entries for a particular user
+     * @param userId
+     * @return List<GuestBookEntryModel>
+     */
     @Override
     public List<GuestBookEntryModel> getAllGuestBookEntriesForUser(Long userId) {
         List<GuestBookEntryEntity> guestBookEntryEntities = guestBookEntryRepository.getAllGuestBookEntriesForUser(userId);
@@ -94,6 +120,10 @@ public class GuestBookEntryServiceImpl implements GuestBookEntryService{
         return guestBookEntryModels;
     }
 
+    /**
+     * Service method to update guest book entry text
+     * @param guestBookEntryModel
+     */
     @Override
     public void updateGuestEntryText(GuestBookEntryModel guestBookEntryModel) {
         Optional<GuestBookEntryEntity> guestBookEntryEntity = guestBookEntryRepository.findById(guestBookEntryModel.getGuestBookEntryId());
@@ -103,6 +133,10 @@ public class GuestBookEntryServiceImpl implements GuestBookEntryService{
         });
     }
 
+    /**
+     * Service method to update guest book entry image
+     * @param guestBookEntryModel
+     */
     @Override
     public void updateGuestEntryImage(GuestBookEntryModel guestBookEntryModel) {
         Optional<GuestBookEntryEntity> guestBookEntryEntity = guestBookEntryRepository.findById(guestBookEntryModel.getGuestBookEntryId());

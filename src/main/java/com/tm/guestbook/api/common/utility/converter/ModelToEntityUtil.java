@@ -1,4 +1,4 @@
-package com.tm.guestbook.common.utility.converter;
+package com.tm.guestbook.api.common.utility.converter;
 
 import com.tm.guestbook.api.entity.GuestBookEntryEntity;
 import com.tm.guestbook.api.model.GuestBookEntryModel;

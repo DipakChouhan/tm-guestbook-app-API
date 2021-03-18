@@ -1,4 +1,4 @@
-package com.tm.guestbook.common.utility;
+package com.tm.guestbook.api.common.utility;
 
 import javax.xml.bind.annotation.XmlRootElement;
 import java.io.Serializable;

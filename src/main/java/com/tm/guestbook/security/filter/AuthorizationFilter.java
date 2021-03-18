@@ -2,8 +2,8 @@ package com.tm.guestbook.security.filter;
 
 import com.auth0.jwt.JWT;
 import com.auth0.jwt.algorithms.Algorithm;
-import com.tm.guestbook.common.utility.ExecutionContext;
-import com.tm.guestbook.common.utility.GuestBookSecurityContextHolder;
+import com.tm.guestbook.api.common.utility.ExecutionContext;
+import com.tm.guestbook.api.common.utility.GuestBookSecurityContextHolder;
 import com.tm.guestbook.security.constant.SecurityConstants;
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
