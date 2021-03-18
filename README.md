@@ -19,3 +19,10 @@ Below are few activities performed in this application using endpoints:
 > mvn clean install
 3. Once the jar file is created, use below command to start the application
 > java -jar <complete_path_to_jar_file.jar>
+
+# Running test cases
+Make sure you are in folder where pom.xml file resides.
+1. Run all test cases
+> mvn -Dtest=GuestBookMainTests test
+2. Run single test case (Replace method-name with name of the test method you want to run)
+> mvn -Dtest=GuestBookMainTests#method-name test
