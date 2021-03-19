@@ -1,4 +1,4 @@
-package com.tm.guestbook;
+package com.tm.guestbook.integration;
 
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
