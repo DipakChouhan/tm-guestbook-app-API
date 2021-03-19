@@ -124,6 +124,18 @@ public class GuestBookEntryServiceTest {
     }
 
     @Test
+    public void test_deleteGuestBookEntries_negative()
+    {
+        boolean flag = true;
+        try {
+            guestBookEntryServiceImpl.deleteGuestBookEntries("2L");
+        } catch (Exception exception) {
+            flag = false;
+        }
+        Assert.assertFalse(flag);
+    }
+
+    @Test
     public void test_updateGuestEntryText()
     {
         GuestBookEntryModel guestBookEntryModel = new GuestBookEntryModel();
@@ -167,6 +179,18 @@ public class GuestBookEntryServiceTest {
             flag = false;
         }
         Assert.assertTrue(flag);
+    }
+
+    @Test
+    public void test_approveGuestBookEntries_negative()
+    {
+        boolean flag = true;
+        try {
+            guestBookEntryServiceImpl.approveGuestBookEntries("2L");
+        } catch (Exception exception) {
+            flag = false;
+        }
+        Assert.assertFalse(flag);
     }
 
     public void test_createGuestBookEntry()
